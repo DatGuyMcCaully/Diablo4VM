@@ -39,7 +39,7 @@ It's important to update the VM GPU Drivers after you have updated the Host GPUs
 
 # Variables
 
-First Header  | Second Header
+Variable  | Description
 ------------- | -------------
 VMName = "Diablo"  | Name of VM in Hyper-V and the computername / hostname
 SourcePath = "C:\Users\xxxx\Downloads\Win11_English_x64.iso"  | path to Windows 10/ 11 ISO on your host
