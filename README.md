@@ -1,6 +1,6 @@
 # Diablo4VM
 
-This is a quick and dirty project to get Diablo 4 running in a HyperV Mirtual machine on windows 10 or 11.
+This is a quick and dirty project to get Diablo 4 running in a HyperV Mirtual machine on windows 10 or 11 with a Nvidia GPU.
 
 # Prerequisites:
 
