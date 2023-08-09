@@ -21,7 +21,7 @@ This is a quick and dirty project to get Diablo 4 running in a HyperV Mirtual ma
 6. Open CopyFilesToVM.ps1 Powershell ISE and edit the params section at the top of the file, you need to be careful about how much ram, storage and hard drive you give it as your system needs to have that available.
 7. On Windows 10 the GPUName must be left as "AUTO", In Windows 11 it can be either "AUTO" or the specific name of the GPU you want to partition exactly how it appears in PreChecks.ps1. Additionally, you need to provide the path to the Windows 10/11 ISO file you downloaded.
 8. Run CopyFilesToVM.ps1 with your changes to the params section - this may take 5-10 minutes.
-9. Open and sign into Parsec on the VM. You can use Parsec to connect to the VM up to 4K60FPS.
+9. Open and sign into Parsec on the VM. You can use Parsec to connect to the VM up to 4K60FPS. (optional)
 10. On the host PC, Open RegEdit
 11. Navigate to Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\
 12. Export the nvlddmkm key to a file, you can call it whatever but I'll call it nvlddmkm.reg
