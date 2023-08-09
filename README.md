@@ -29,3 +29,33 @@ This is a quick and dirty project to get Diablo 4 running in a HyperV Mirtual ma
 14. On the VM, Install the nvlddmkm.reg
 15. Install Battle.net and Diablo
 16. Run Diablo
+
+# Upgrading GPU Drivers when you update the host GPU Drivers
+It's important to update the VM GPU Drivers after you have updated the Host GPUs drivers. You can do this by...
+
+1. Reboot the host after updating GPU Drivers.
+2. Open Powershell as administrator and change directory (CD) to the path that CopyFilesToVM.ps1 and Update-VMGpuPartitionDriver.ps1 are located.
+3. Run Update-VMGpuPartitionDriver.ps1 -VMName "Name of your VM" -GPUName "Name of your GPU" (Windows 10 GPU name must be "AUTO")
+
+# Variables
+
+First Header  | Second Header
+------------- | -------------
+VMName = "Diablo"  | Name of VM in Hyper-V and the computername / hostname
+SourcePath = "C:\Users\xxxx\Downloads\Win11_English_x64.iso"  | path to Windows 10/ 11 ISO on your host
+Edition    = 6  | Leave as 6, this means Windows 10/11 Pro
+VhdFormat  = "VHDX"  | Leave this value alone
+DiskLayout = "UEFI"  | Leave this value alone
+SizeBytes  = 100gb  | Disk size, in this case 100GB, the minimum is 20GB
+MemoryAmount = 8GB   | Memory size, in this case 8GB
+CPUCores = 8  | CPU Cores you want to give VM, in this case 8
+NetworkSwitch = "Default Switch"  | Leave this alone unless you're not using the default Hyper-V Switch
+VHDPath = "C:\Users\Public\Documents\Hyper-V\Virtual Hard Disks\"  | Path to the folder you want the VM Disk to be stored in, it must already exist
+UnattendPath = "$PSScriptRoot"+"\autounattend.xml"  | Leave this value alone
+PUName = "AUTO"  | AUTO selects the first available GPU. On Windows 11 you may also use the exact name of the GPU you want to share with the VM in multi GPU situations (GPU selection is not available in Windows 10 and must be set to AUTO)
+GPUResourceAllocationPercentage = 50  | Percentage of the GPU you want to share with the VM
+Team_ID = ""  | The Parsec for Teams ID if you are a Parsec for Teams Subscriber
+Key = ""  | The Parsec for Teams Secret Key if you are a Parsec for Teams Subscriber
+Username = "Username"  | The VM Windows Username, do not include special characters, and must be different from the "VMName" value you set
+Password = "CoolestPassword!"  | The VM Windows Password, cannot be blank
+Autologon = "true"  | If you want the VM to automatically login to the Windows Desktop
