@@ -1,0 +1,36 @@
+Open powershell ISE as admin
+
+run PreChecks.ps1 from ISE to check compatability
+
+Open CopyFilesToVM.ps1 in a text editor and edit the variables at the top such as:
+SourcePath
+CPUCORES
+Memoryamount
+VHDPath
+username
+password
+
+run CopyFilesToVM.ps1 from powershell ISE
+
+Open VM and intall bnet and diablo
+
+This only works for nvidia cards, but may only work for 3060's, IDK
+In GAMEDIR\FenrisDebug.txt you should see an error about NVAPI and only 1 display detected (Microsoft Basic Render)
+The steps:
+
+On the HOST PC:
+
+Open RegEdit
+Navigate to Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\
+Export the nvlddmkm key to a file, you can call it whatever but I'll call it nvlddmkm.reg
+copy the resulting registery file nvlddmkm.reg to the VM's disk somehow (either mount the disk while it's offline, or use file sharing)
+On the VM:
+
+Install the nvlddmkm.reg
+Launch the game, no reboot needed.
+If you still get an error, the Nvidia drivers may not be installed properly on Host or VM, reinstall in both Reinstall on Host, Update-VMGpuPartitionDriver.ps1 script 
+
+see if diablo runs
+
+
+
