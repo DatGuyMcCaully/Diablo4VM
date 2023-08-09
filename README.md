@@ -5,7 +5,7 @@ This is a quick and dirty project to get Diablo 4 running in a HyperV Mirtual ma
 # Prerequisites:
 
 * Windows 10 20H1+ Pro, Enterprise or Education OR Windows 11 Pro, Enterprise or Education. Windows 11 on host and VM is preferred due to better compatibility.
-* Matched Windows versions between the host and VM. Mismatches may cause compatibility issues, blue-screens, or other issues. (Win10 21H1 + Win10 21H1, or Win11 21H2 + Win11 21H2, for example)
+* Matched Windows versions between the host and VM. Mismatches may cause compatibility issues, blue-screens, or other issues. (Win10 21H1 + Win10 21H1, or Win11 21H2 + Win11 21H2, for example) (I personally haven't had an issue win 11 -> win 10 VM but your milage may vary)
 * Desktop Computer with dedicated NVIDIA GPU. GPU must support hardware video encoding (NVIDIA NVENC).
 * Latest GPU driver from I NVIDIA.com, don't rely on Device manager or Windows update.
 * Latest Windows 10 ISO [downloaded from here](https://www.microsoft.com/en-gb/software-download/windows10ISO "Downloaded from here") / Windows 11 ISO [downloaded from here](https://www.microsoft.com/en-us/software-download/windows11 "downloaded from here"). - Do not use Media Creation Tool, if no direct ISO link is available, follow [this guide](https://www.nextofwindows.com/downloading-windows-10-iso-images-using-rufus).
