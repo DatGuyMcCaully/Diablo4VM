@@ -59,3 +59,15 @@ Key = ""  | The Parsec for Teams Secret Key if you are a Parsec for Teams Subscr
 Username = "Username"  | The VM Windows Username, do not include special characters, and must be different from the "VMName" value you set
 Password = "CoolestPassword!"  | The VM Windows Password, cannot be blank
 Autologon = "true"  | If you want the VM to automatically login to the Windows Desktop
+
+# Notes
+
+* After you have signed into Parsec on the VM, always use Parsec to connect to the VM. Keep the Microsft Hyper-V Video adapter disabled. Using RDP and Hyper-V Enhanced Session mode will result in broken behaviour and black screens in Parsec. RDP and the Hyper-V video adapter only offer a maximum of 30FPS. Using Parsec will allow you to use up to 4k60 FPS.
+* If you get "ERROR : Cannot bind argument to parameter 'Path' because it is null." this probably means you used Media Creation Tool to download the ISO. You unfortunately cannot use that, if you don't see a direct ISO download link at the Microsoft page, follow [this guide.](https://www.nextofwindows.com/downloading-windows-10-iso-images-using-rufus)
+* Your GPU on the host will have a Microsoft driver in device manager, rather than an nvidia/intel/amd driver. As long as it doesn't have a yellow triangle over top of the device in device manager, it's working correctly.
+* A powered on display / HDMI dummy dongle must be plugged into the GPU to allow Parsec to capture the screen. You only need one of these per host machine regardless of number of VM's.
+* If your computer is super fast it may get to the login screen before the audio driver (VB Cable) and Parsec display driver are installed, but fear not! They should soon install.
+* The screen may go black for times up to 10 seconds in situations when UAC prompts appear, applications go in and out of fullscreen and when you switch between video codecs in Parsec - not really sure why this happens, it's unique to GPU-P machines and seems to recover faster at 1280x720.
+* Vulkan renderer is unavailable and GL games may or may not work. [This](https://www.microsoft.com/en-us/p/opencl-and-opengl-compatibility-pack/9nqpsl29bfff?SilentAuth=1&wa=wsignin1.0#activetab=pivot:overviewtab) may help with some OpenGL apps.
+* If you do not have administrator permissions on the machine it means you set the username and vmname to the same thing, these needs to be different.
+* To download Windows ISOs with Rufus, it must have "Check for updates" enabled.
