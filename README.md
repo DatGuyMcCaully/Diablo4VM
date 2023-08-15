@@ -22,13 +22,15 @@ This is a quick and dirty project to get Diablo 4 running in a HyperV Mirtual ma
 7. On Windows 10 the GPUName must be left as "AUTO", In Windows 11 it can be either "AUTO" or the specific name of the GPU you want to partition exactly how it appears in PreChecks.ps1. Additionally, you need to provide the path to the Windows 10/11 ISO file you downloaded.
 8. Run CopyFilesToVM.ps1 with your changes to the params section - this may take 5-10 minutes.
 9. Open and sign into Parsec on the VM. You can use Parsec to connect to the VM up to 4K60FPS. (optional)
-10. On the host PC, Open RegEdit
-11. Navigate to Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\
-12. Export the nvlddmkm key to a file, you can call it whatever but I'll call it nvlddmkm.reg
-13. copy the resulting registery file nvlddmkm.reg to the VM's disk somehow (either mount the disk while it's offline, or use file sharing)
-14. On the VM, Install the nvlddmkm.reg
-15. Install Battle.net and Diablo
-16. Run Diablo
+10. Turn off the VM and go to the VM settings on host.
+11. Hit security and uncheck the enable secure boot checkbox.
+12. On the host PC, Open RegEdit.
+13. Navigate to Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\
+14. Export the nvlddmkm key to a file, you can call it whatever but I'll call it nvlddmkm.reg
+15. copy the resulting registery file nvlddmkm.reg to the VM's disk somehow (either mount the disk while it's offline, or use file sharing)
+16. On the VM, Install the nvlddmkm.reg
+17. Install Battle.net and Diablo
+18. Run Diablo
 
 # Upgrading GPU Drivers when you update the host GPU Drivers
 It's important to update the VM GPU Drivers after you have updated the Host GPUs drivers. You can do this by...
@@ -96,13 +98,15 @@ Dies ist ein schnelles und einfaches Projekt, um Diablo 4 in einer Hyper-V-Virtu
 7. Unter Windows 10 muss der Wert von GPUName als "AUTO" belassen werden. Unter Windows 11 kann er entweder "AUTO" oder der genaue Name der GPU sein, die Sie partitionieren möchten, genau wie es in PreChecks.ps1 angezeigt wird. Geben Sie außerdem den Pfad zur Windows 10/11 ISO-Datei an, die Sie heruntergeladen haben.
 8. Führen Sie CopyFilesToVM.ps1 mit Ihren Änderungen im Abschnitt "params" aus - das kann 5-10 Minuten dauern.
 9. Öffnen Sie Parsec auf der VM und melden Sie sich an. Sie können Parsec verwenden, um sich mit der VM zu verbinden, mit bis zu 4K60FPS. (optional)
-10. Auf dem Host-PC, öffnen Sie die Registrierung (RegEdit).
-11. Navigieren Sie zu Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\
-12. Exportieren Sie den Schlüssel "nvlddmkm" in eine Datei. Sie können sie beliebig benennen, aber ich werde sie "nvlddmkm.reg" nennen.
-13. Kopieren Sie die resultierende Registrierungsdatei "nvlddmkm.reg" auf die Festplatte der VM, entweder indem Sie die Festplatte offline einbinden oder Dateifreigabe verwenden.
-14. Installieren Sie "nvlddmkm.reg" auf der VM.
-15. Installieren Sie Battle.net und Diablo.
-16. Starten Sie Diablo.
+10. Schalten Sie die virtuelle Maschine aus und gehen Sie zu den VM-Einstellungen auf dem Host.
+11. Klicken Sie auf "Sicherheit" und deaktivieren Sie das Kontrollkästchen für "Sicheres Starten aktivieren".
+12. Auf dem Host-PC, öffnen Sie die Registrierung (RegEdit).
+13. Navigieren Sie zu Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\
+14. Exportieren Sie den Schlüssel "nvlddmkm" in eine Datei. Sie können sie beliebig benennen, aber ich werde sie "nvlddmkm.reg" nennen.
+15. Kopieren Sie die resultierende Registrierungsdatei "nvlddmkm.reg" auf die Festplatte der VM, entweder indem Sie die Festplatte offline einbinden oder Dateifreigabe verwenden.
+16. Installieren Sie "nvlddmkm.reg" auf der VM.
+17. Installieren Sie Battle.net und Diablo.
+18. Starten Sie Diablo.
 
 ## Aktualisieren der GPU-Treiber beim Aktualisieren der Host-GPU-Treiber
 Es ist wichtig, die VM-GPU-Treiber zu aktualisieren, nachdem Sie die Treiber der Host-GPUs aktualisiert haben. Dies können Sie folgendermaßen tun:
