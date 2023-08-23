@@ -9,7 +9,7 @@
     #Set your RAM here
     MemoryAmount = 8GB
     #Set you CPU cores here
-    CPUCores = 8
+    CPUCores = 4
     NetworkSwitch = "Default Switch"
     #Path where virtual HDD will be
     VHDPath = "Path to VHD"
